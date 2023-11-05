@@ -11,6 +11,10 @@ const questionSchema = new Schema({
     type: String,
     required: false,
   },
+  question_type: {
+    type: String,
+    required: true,
+  },
   options: [
     {
       option: { type: String, required: true },

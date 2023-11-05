@@ -6,12 +6,11 @@ export const NewQuestionBox = () => {
 
   const handleChange = (e) => {
     const _questionType = e.target.value
-    console.log(_questionType)
     setQuestionType(_questionType)
   }
 
   return (
-    <div className="flex items-center justify-around">
+    <div className="flex items-center justify-between mb-3">
       <Question questionType={questionType} />
 
       <div>

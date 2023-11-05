@@ -2,7 +2,6 @@ const { Question } = require("../models/question.model")
 
 const addQuestion = async (req, res, next) => {
   try {
-    console.log(req.body)
     const question = new Question(req.body)
     await question
       .save()
@@ -14,6 +13,16 @@ const addQuestion = async (req, res, next) => {
   }
 }
 
+const getAllQuestions = async (req, res, next) => {
+  try {
+    const questions = await Question.find()
+    res.status(200).json({ questions })
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   addQuestion,
+  getAllQuestions,
 }
