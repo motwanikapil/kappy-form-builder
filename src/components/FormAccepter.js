@@ -1,6 +1,6 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
-import { MultipleChoiceAnswers } from "./MultipleChoiceAnswers"
+import { MultipleChoiceAnswers } from "./AnswerTypes/MultipleChoiceAnswers"
 
 export const FormAccepter = () => {
   const [formData, setFormData] = useState([])
@@ -20,6 +20,8 @@ export const FormAccepter = () => {
           <div>
             <QuestionComponent question={question} />
             {options && <MultipleChoiceAnswers options={options} />}
+
+            <button></button>
           </div>
         )
       })}

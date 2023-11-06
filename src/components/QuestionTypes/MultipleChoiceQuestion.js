@@ -11,14 +11,12 @@ export const MultipleChoiceQuestion = () => {
   }
 
   return (
-    <div className="flex items-center justify-center flex-col w-full">
+    <div>
       <input type="text" placeholder="Enter your question" className="w-full" />
-      <>
-        {renderOptions()}
-        {renderArray.map((choice, id) => (
-          <div key={id}>{choice}</div>
-        ))}
-      </>
+      {renderOptions()}
+      {renderArray.map((choice, id) => (
+        <div key={id}>{choice}</div>
+      ))}
     </div>
   )
 }

@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 import { Question } from "./Question"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTrashAlt } from "@fortawesome/free-regular-svg-icons"
 
-export const NewQuestionBox = () => {
+export const NewQuestionBox = ({ deleteQuestion }) => {
   const [questionType, setQuestionType] = useState("short_answer")
 
   const handleChange = (e) => {
@@ -10,7 +12,7 @@ export const NewQuestionBox = () => {
   }
 
   return (
-    <div className="flex items-center justify-between mb-3">
+    <div className="flex items-center justify-evenly mb-3">
       <Question questionType={questionType} />
 
       <div>
@@ -29,6 +31,13 @@ export const NewQuestionBox = () => {
           <option value="date">Date</option>
           <option value="time">Time</option>
         </select>
+        <button
+          type="button"
+          className="ml-3 object-contai"
+          onClick={deleteQuestion}
+        >
+          <FontAwesomeIcon icon={faTrashAlt} />
+        </button>
       </div>
     </div>
   )
